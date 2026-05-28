@@ -1,0 +1,8 @@
+{
+  "appId": "luxury.aqar.crm",
+  "appName": "AQar Mobile",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  }
+}

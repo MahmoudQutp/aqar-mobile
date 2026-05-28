@@ -1,0 +1,6 @@
+{
+  "name": "AQar Mobile",
+  "description": "AQar is a premium mobile-first SaaS solution for real estate discovery, luxury developments, and CRM lead pipeline tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

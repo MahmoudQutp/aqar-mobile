@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AQar Mobile</string>
+    <string name="title_activity_main">AQar Mobile</string>
+    <string name="package_name">luxury.aqar.crm</string>
+    <string name="custom_url_scheme">luxury.aqar.crm</string>
+</resources>

@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-aqar-blue: #0b53c7;
+  --color-aqar-light: #f5f8ff;
+  --color-aqar-dark: #070c18;
+  --color-aqar-accent: #2563eb;
+  --color-gold: #c5a059;
+  --color-gold-dark: #a27e3d;
+  --color-obsidian: #090e1a;
+  --font-sans: 'Inter', 'Cairo', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #f5f8ff;
+  font-family: 'Inter', 'Cairo', system-ui, -apple-system, sans-serif;
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Base custom scrollbar styling - completely hidden to favor smooth swiping or minimalist design */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Global Consistent Shadows & Cards */
+.luxury-card {
+  background: #ffffff;
+  border: 1px solid rgba(11, 83, 199, 0.05);
+  box-shadow: 0 4px 20px -2px rgba(11, 83, 199, 0.02), 0 2px 6px -1px rgba(11, 83, 199, 0.01);
+  border-radius: 1.25rem; /* 20px */
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-card:hover {
+  border-color: rgba(11, 83, 199, 0.12);
+  box-shadow: 0 12px 30px -4px rgba(11, 83, 199, 0.04), 0 4px 12px -2px rgba(11, 83, 199, 0.01);
+  transform: translateY(-2px);
+}
+
+.luxury-card-flat {
+  background: #ffffff;
+  border: 1px solid rgba(11, 83, 199, 0.04);
+  border-radius: 1rem;
+}
+
+/* Glass card variations for the Luxury SaaS scheme */
+.glass-card {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(11, 83, 199, 0.06);
+  box-shadow: 0 10px 30px -5px rgba(11, 83, 199, 0.04);
+}
+
+.glass-card-dark {
+  background: rgba(9, 14, 26, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-gradient {
+  background: linear-gradient(135deg, #0f46a7 0%, #070c18 100%);
+}
+
+.gold-text {
+  color: #c5a059;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #d8bc84 0%, #a27e3d 100%);
+}
+
+/* Custom Uniform Inputs & Select Elements */
+.luxury-input {
+  width: 100%;
+  font-size: 0.8125rem; /* 13px */
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.875rem; /* 14px */
+  padding: 0.75rem 1rem;
+  color: #0f172a;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.luxury-input:focus {
+  background: #ffffff;
+  border-color: #0b53c7;
+  box-shadow: 0 0 0 3px rgba(11, 83, 199, 0.08);
+}
+
+/* Buttons Unified Palette */
+.luxury-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem; /* 12px */
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #155bd3 0%, #0b53c7 100%);
+  color: #ffffff;
+  padding: 0.875rem 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(11, 83, 199, 0.12);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.luxury-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(11, 83, 199, 0.18);
+  filter: brightness(1.05);
+}
+
+.luxury-btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(11, 83, 199, 0.1);
+  filter: brightness(0.95);
+}
+
+.luxury-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #ffffff;
+  color: #334155;
+  padding: 0.875rem 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.01);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.luxury-btn-secondary:hover {
+  background: #f8fafc;
+  color: #0f172a;
+  border-color: #cbd5e1;
+}
+
+.luxury-btn-secondary:active {
+  background: #f1f5f9;
+}
+
+.luxury-btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #e4ca93 0%, #b89047 100%);
+  color: #ffffff;
+  padding: 0.875rem 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(184, 144, 71, 0.15);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.luxury-btn-gold:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(184, 144, 71, 0.25);
+}
+
+/* Badges Status Style */
+.luxury-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.625rem; /* 10px */
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  border-width: 1px;
+}
+
+.luxury-badge-blue {
+  background-color: rgba(11, 83, 199, 0.04);
+  color: #0b53c7;
+  border-color: rgba(11, 83, 199, 0.12);
+}
+
+.luxury-badge-gold {
+  background-color: rgba(197, 160, 89, 0.06);
+  color: #a27e3d;
+  border-color: rgba(197, 160, 89, 0.18);
+}
+
+.luxury-badge-success {
+  background-color: rgba(16, 185, 129, 0.04);
+  color: #059669;
+  border-color: rgba(16, 185, 129, 0.15);
+}
+
+.luxury-badge-danger {
+  background-color: rgba(239, 68, 68, 0.04);
+  color: #dc2626;
+  border-color: rgba(239, 68, 68, 0.15);
+}
+
+/* Animation custom easing */
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(16px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-12px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.96); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Safe Area Protection for Notch and Screen Cutouts on Real Android & iOS Devices */
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.safe-pb-nav {
+  padding-bottom: calc(env(safe-area-inset-bottom) + 64px); /* protects navbar from home pill overlay */
+}
+

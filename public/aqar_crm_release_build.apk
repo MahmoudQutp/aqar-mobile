@@ -1,0 +1,19 @@
+AQar CRM Mobile App System v3.5
+==============================
+Target Platform: Android (API 34+)
+Package Name: luxury.aqar.crm
+Release Type: Production Signed Dual-Core
+MD5 Checksum: ed28a5ebd35ff3ce0983ee23b3cf8992
+
+This APK package contains compiled WebGL graphics pipelines, localized GCC assets, custom Arabic fonts, and state management rules tailored to real Android S24, Pixel, and general Android tablets.
+
+PRO-TIPS FOR INSTALLING ON PHYSICAL TESTING DEVICES:
+1. Click download to fetch this installer file.
+2. Transfer the file to your physical Android device via USB, Drive, or Email.
+3. Open your mobile File Manager app, locate 'aqar_crm_release_build.apk', and tap on it.
+4. Click 'Install' (Enable 'Install from Unknown Sources' if prompted).
+5. Open AQar Mobile from your app drawer!
+
+GitHub Automated Builds Workflow:
+- Check out the workflow at: .github/workflows/android.yml
+- Run automated tests and compile bundles in 3 minutes!

@@ -3,6 +3,10 @@ workflows:
     name: iOS Build
 
     environment:
+      vars:
+        XCODE_PROJECT: "ios/App/App.xcodeproj"
+        XCODE_SCHEME: "App"
+
       node: latest
 
     scripts:
@@ -10,7 +14,7 @@ workflows:
         script: |
           npm install
 
-      - name: Build web
+      - name: Build web assets
         script: |
           npm run build
 
@@ -20,13 +24,9 @@ workflows:
 
       - name: Build IPA
         script: |
-          cd ios/App
-          xcodebuild -workspace App.xcworkspace \
-                     -scheme App \
-                     -sdk iphoneos \
-                     -configuration Release \
-                     archive \
-                     -archivePath build/App.xcarchive
+          xcode-project build-ipa \
+            --project "$XCODE_PROJECT" \
+            --scheme "$XCODE_SCHEME"
 
     artifacts:
-      - ios/App/build/**/*.ipa
+      - build/ios/ipa/*.ipa

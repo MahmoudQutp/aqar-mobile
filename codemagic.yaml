@@ -22,11 +22,15 @@ workflows:
         script: |
           npx cap sync ios
 
-      - name: Build IPA
+      - name: Build iOS App
         script: |
-          xcode-project build-ipa \
-            --project "$XCODE_PROJECT" \
-            --scheme "$XCODE_SCHEME"
+          cd ios/App
+          xcodebuild \
+            -project App.xcodeproj \
+            -scheme App \
+            -sdk iphonesimulator \
+            -configuration Debug \
+            build
 
     artifacts:
-      - build/ios/ipa/*.ipa
+      - ios/App/build/**/*.app

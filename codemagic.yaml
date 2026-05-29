@@ -39,3 +39,4 @@ workflows:
 
     artifacts:
       - /tmp/xcodebuild_logs/*.log
+      - /Users/builder/Library/Developer/Xcode/DerivedData/**/Build/Products/Debug-iphonesimulator/*.app

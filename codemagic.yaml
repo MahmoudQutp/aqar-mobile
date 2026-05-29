@@ -1,6 +1,6 @@
 workflows:
   ios-workflow:
-    name: Simple iOS Build
+    name: Stable iOS Build
 
     environment:
       xcode: latest
@@ -15,11 +15,11 @@ workflows:
         script: |
           npm run build || true
 
-      - name: Sync Capacitor iOS
+      - name: Sync Capacitor
         script: |
           npx cap sync ios
 
-      - name: Clean Xcode
+      - name: Clean project
         script: |
           cd ios/App
           xcodebuild clean \
@@ -33,7 +33,7 @@ workflows:
             -project App.xcodeproj \
             -scheme App \
             -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            -destination 'generic/platform=iOS Simulator' \
             CODE_SIGNING_ALLOWED=NO \
             build
 

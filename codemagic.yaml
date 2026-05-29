@@ -1,12 +1,9 @@
 workflows:
   ios-workflow:
-    name: iOS Build
+    name: Simple iOS Build
 
     environment:
-      vars:
-        XCODE_PROJECT: "ios/App/App.xcodeproj"
-        XCODE_SCHEME: "App"
-
+      xcode: latest
       node: latest
 
     scripts:
@@ -16,21 +13,29 @@ workflows:
 
       - name: Build web assets
         script: |
-          npm run build
+          npm run build || true
 
-      - name: Sync Capacitor
+      - name: Sync Capacitor iOS
         script: |
           npx cap sync ios
 
-      - name: Build iOS App
+      - name: Clean Xcode
+        script: |
+          cd ios/App
+          xcodebuild clean \
+            -project App.xcodeproj \
+            -scheme App
+
+      - name: Build iOS Simulator App
         script: |
           cd ios/App
           xcodebuild \
             -project App.xcodeproj \
             -scheme App \
             -sdk iphonesimulator \
-            -configuration Debug \
+            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            CODE_SIGNING_ALLOWED=NO \
             build
 
     artifacts:
-      - ios/App/build/**/*.app
+      - /tmp/xcodebuild_logs/*.log
